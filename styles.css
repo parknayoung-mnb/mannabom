@@ -345,3 +345,61 @@ body[data-theme="dark"] .contact-flower b { color: #f3bdc4; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Readable, anchored brand presentation */
+html { scroll-padding-top: 98px; }
+.site-header { position: fixed; background: rgba(255,237,240,.92); backdrop-filter: blur(14px); box-shadow: 0 4px 20px rgba(87,58,53,.06); }
+.primary-nav { font-size: 13px; font-weight: 700; }
+.hero-art { display: grid; place-items: center; height: 465px; }
+.logo-orbit { position: absolute; width: min(420px, 90%); aspect-ratio: 1; border: 1px solid rgba(112,72,62,.18); border-radius: 50%; }
+.logo-orbit::before, .logo-orbit::after { position: absolute; inset: 24px; border: 1px solid rgba(178,103,114,.16); border-radius: inherit; content: ""; }
+.logo-orbit::after { inset: -20px; border-style: dashed; opacity: .65; }
+.hero-logo-plate { position: relative; display: flex; width: min(340px, 84%); min-height: 350px; align-items: center; flex-direction: column; justify-content: center; padding: 34px; border: 1px solid rgba(112,72,62,.16); border-radius: 48% 48% 42% 42%; background: rgba(255,253,249,.76); box-shadow: 0 28px 70px rgba(112,72,62,.12); text-align: center; }
+.logo-kicker { color: #845b56; font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.hero-company-mark { display: block; width: 145px; height: 145px; margin: 19px auto 4px; object-fit: contain; }
+.hero-company-name { color: #70483e; font-family: "Noto Sans KR", sans-serif; font-size: 38px; font-weight: 800; letter-spacing: -.09em; }
+.logo-caption { margin-top: 12px; color: #71544e; font-size: 14px; font-weight: 700; }
+.logo-sparkle { position: absolute; top: 14%; right: 12%; color: #b26772; font-size: 34px; }
+.hero .eyebrow, .section-label { font-size: 11px; font-weight: 800; }
+.hero-copy, .about-description, .how-intro, .step p, .service-text p, .trust-copy p, .contact-copy { font-size: 14px; font-weight: 500; }
+.hero-facts small { font-size: 11px; font-weight: 600; }
+.promise-row article h3, .step h3, .service-text h3 { font-size: 16px; font-weight: 800; }
+.promise-row article p { font-size: 12px; font-weight: 500; }
+.step-foot, .service-number, .service-price span, .price-note { font-size: 10px; font-weight: 700; }
+.trust-layout { grid-template-columns: 350px 1fr; gap: 65px; }
+.founder-card { display: flex; justify-content: center; min-height: 0; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.founder-photo { width: 250px; height: 375px; border-radius: 130px 130px 18px 18px; box-shadow: 0 24px 52px rgba(75,48,42,.18); }
+.trust-copy p { font-size: 14px; font-weight: 500; }
+.trust-chips span { font-size: 10px; font-weight: 700; }
+body[data-theme="dark"] .site-header { background: rgba(40,27,26,.94); }
+body[data-theme="dark"] .hero-logo-plate { border-color: rgba(255,244,238,.18); background: rgba(47,34,32,.9); }
+body[data-theme="dark"] .hero-company-name { color: #fff0e9; }
+body[data-theme="dark"] .logo-kicker, body[data-theme="dark"] .logo-caption { color: #ead0c9; }
+body[data-theme="dark"] .hero-company-mark { filter: brightness(0) invert(1); }
+body[data-theme="dark"] .founder-card { background: transparent; }
+@media (max-width: 950px) {
+  .trust-layout { grid-template-columns: 270px 1fr; }
+  .founder-photo { width: 215px; height: 323px; }
+  .hero-logo-plate { min-height: 320px; }
+}
+@media (max-width: 650px) {
+  html { scroll-padding-top: 80px; }
+  .site-header .header-inner { height: 70px; }
+  .hero-art { height: 350px; margin-top: 14px; transform: none; }
+  .hero-logo-plate { width: min(290px, 82%); min-height: 290px; }
+  .hero-company-mark { width: 112px; height: 112px; }
+  .hero-company-name { font-size: 32px; }
+  .logo-caption { font-size: 12px; }
+  .hero .eyebrow { font-size: 10px; }
+  .hero-copy { font-size: 14px; }
+  .hero-facts small { font-size: 10px; }
+  .section-label { font-size: 10px; }
+  .about-description { font-size: 13px; }
+  .how-intro, .step p, .service-text p, .trust-copy p, .contact-copy { font-size: 12px; }
+  .step h3, .service-text h3, .promise-row article h3 { font-size: 14px; }
+  .trust-layout { gap: 30px; }
+  .founder-card { width: 100%; justify-content: center; }
+  .founder-photo { width: 190px; height: 285px; }
+  .trust-chips span { font-size: 9px; }
+  .contact { padding-bottom: 82px; }
+}
