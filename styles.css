@@ -22,7 +22,7 @@ button { font: inherit; }
 .site-header { position: absolute; z-index: 10; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(87,58,53,.12); color: var(--cocoa); }
 .header-inner { display: flex; height: 82px; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; }
-.brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-family: "Noto Sans KR", sans-serif; font-size: 13px; font-weight: 700; }
+.brand-mark-img { display: block; width: 36px; height: 36px; object-fit: contain; }
 .brand-name { font-family: "Noto Sans KR", sans-serif; font-size: 16px; font-weight: 800; letter-spacing: -.06em; }
 .brand-name > span { color: #b26772; }
 .primary-nav { display: flex; align-items: center; gap: 35px; margin-left: auto; font-size: 12px; font-weight: 600; }
@@ -139,14 +139,19 @@ button { font: inherit; }
 .service-price span { color: #9b827d; font-size: 9px; }
 .price-note { margin: 18px 0 0; color: #9c817b; font-size: 9px; text-align: right; }
 .trust { background: var(--paper); }
-.trust-layout { position: relative; display: grid; grid-template-columns: 1fr 1fr 150px; align-items: center; gap: 55px; }
+.trust-layout { position: relative; display: grid; grid-template-columns: 330px 1fr; align-items: center; gap: 65px; }
+.founder-card { position: relative; display: flex; min-height: 210px; align-items: center; gap: 20px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--paper), var(--strawberry) 22%); }
+.founder-photo { width: 112px; height: 156px; flex: 0 0 auto; overflow: hidden; border-radius: 70px 70px 12px 12px; background: var(--strawberry); }
+.founder-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 34%; }
+.founder-role { margin: 0 0 9px; color: #a15c65; font-size: 7px; font-weight: 700; letter-spacing: .1em; }
+.founder-card h3 { margin: 0 0 6px; color: var(--ink); font-family: "Noto Sans KR", sans-serif; font-size: 14px; }
+.founder-caption { margin: 0; color: var(--muted); font-family: "Noto Sans KR", sans-serif; font-size: 9px; line-height: 1.8; word-break: keep-all; }
+.founder-logo { position: absolute; right: 16px; bottom: 13px; width: 23px; height: 23px; opacity: .65; }
+.trust-main .eyebrow { margin-bottom: 13px; }
 .trust h2 { font-size: clamp(29px, 3.2vw, 40px); line-height: 1.5; }
 .trust-copy p { margin: 0; color: var(--muted); font-size: 11px; line-height: 2; word-break: keep-all; }
 .trust-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .trust-chips span { padding: 7px 9px; border: 1px solid var(--line); border-radius: 99px; color: #966c67; font-size: 8px; }
-.trust-seal { display: grid; width: 137px; height: 137px; place-items: center; align-content: center; border: 1px solid #d7b5b1; border-radius: 50%; color: #936b66; text-align: center; transform: rotate(8deg); }
-.trust-seal span { font-size: 8px; font-weight: 700; letter-spacing: .11em; line-height: 1.65; }
-.trust-seal b { margin-top: 7px; color: #ad6872; font-size: 20px; font-weight: 400; }
 .contact { position: relative; overflow: hidden; padding-bottom: 110px; color: #fff5ef; background: var(--cocoa-dark); }
 .contact-layout { position: relative; display: grid; grid-template-columns: 145px 1fr 270px; gap: 0 54px; }
 .contact-main { position: relative; z-index: 1; }
@@ -165,7 +170,7 @@ button { font: inherit; }
 .site-footer { color: #b59d95; background: #19110f; }
 .footer-inner { display: flex; min-height: 78px; align-items: center; justify-content: space-between; }
 .footer-brand { color: #fff1e9; }
-.footer-brand .brand-mark { width: 27px; height: 27px; font-size: 11px; }
+.footer-brand .brand-mark-img { width: 29px; height: 29px; filter: brightness(0) invert(1); }
 .footer-brand .brand-name { font-size: 13px; }
 .footer-brand .brand-name > span { color: #e9aeb7; }
 .footer-inner p, .back-top { margin: 0; font-size: 8px; letter-spacing: .08em; }
@@ -189,6 +194,9 @@ body[data-theme="dark"] .service-number, body[data-theme="dark"] .service-price 
 body[data-theme="dark"] .theme-toggle, body[data-theme="dark"] .menu-toggle { border-color: rgba(255,244,238,.45); color: #fff1eb; background: rgba(57,39,35,.18); }
 body[data-theme="dark"] .site-header { border-color: rgba(255,244,238,.19); color: #fff1eb; }
 body[data-theme="dark"] .nav-contact { border-color: rgba(255,244,238,.4); }
+body[data-theme="dark"] .site-header .brand-mark-img { filter: brightness(0) invert(1); }
+body[data-theme="dark"] .founder-card { background: #2a2020; }
+body[data-theme="dark"] .founder-logo { filter: brightness(0) invert(1); }
 
 @media (max-width: 950px) {
   .container { width: min(100% - 48px, 760px); }
@@ -201,15 +209,17 @@ body[data-theme="dark"] .nav-contact { border-color: rgba(255,244,238,.4); }
   .how-heading, .services-heading, .contact-layout { grid-template-columns: 115px 1fr; gap: 30px; }
   .how-intro { grid-column: 2; margin: -15px 0 0; }
   .service-card { grid-template-columns: 100px 65px 1fr 120px; gap: 18px; }
-  .trust-layout { grid-template-columns: 1fr 1fr 115px; gap: 28px; }
-  .trust-seal { width: 110px; height: 110px; }
+  .trust-layout { grid-template-columns: 270px 1fr; gap: 30px; }
+  .founder-card { gap: 13px; padding: 13px; }
+  .founder-photo { width: 91px; height: 135px; }
+  .trust h2 { font-size: 30px; }
   .contact-flower { position: absolute; top: 50px; right: 0; width: 170px; height: 170px; opacity: .56; }
 }
 @media (max-width: 650px) {
   html { scroll-padding-top: 70px; }
   .container { width: calc(100% - 40px); }
   .header-inner { height: 70px; }
-  .brand-mark { width: 31px; height: 31px; }
+  .brand-mark-img { width: 33px; height: 33px; }
   .brand-name { font-size: 14px; }
   .header-controls { gap: 7px; }
   .theme-toggle, .menu-toggle { width: 38px; height: 38px; }
@@ -275,12 +285,12 @@ body[data-theme="dark"] .nav-contact { border-color: rgba(255,244,238,.4); }
   .service-price strong { font-size: 11px; }
   .service-price span { font-size: 8px; }
   .price-note { font-size: 8px; text-align: left; }
-  .trust-layout { grid-template-columns: 1fr; gap: 20px; }
+  .trust-layout { grid-template-columns: 1fr; gap: 27px; }
+  .founder-card { width: min(100%, 340px); min-height: 168px; gap: 17px; padding: 12px; }
+  .founder-photo { width: 92px; height: 137px; }
+  .founder-logo { right: 12px; bottom: 10px; width: 20px; height: 20px; }
   .trust h2 { font-size: 30px; }
   .trust-copy p { font-size: 10px; }
-  .trust-seal { position: absolute; top: 2px; right: 0; width: 70px; height: 70px; opacity: .65; }
-  .trust-seal span { font-size: 5px; }
-  .trust-seal b { margin-top: 2px; font-size: 13px; }
   .trust-chips { max-width: 330px; }
   .trust-chips span { font-size: 7px; }
   .contact { padding-bottom: 82px; }
