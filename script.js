@@ -9,7 +9,7 @@ function setTheme(theme, persist = true) {
   themeToggle.setAttribute('aria-label', isDark ? '라이트 모드로 전환' : '다크 모드로 전환');
   themeToggle.setAttribute('title', isDark ? '라이트 모드로 전환' : '다크 모드로 전환');
   themeToggle.querySelector('.theme-icon').textContent = isDark ? '☀' : '☾';
-  document.querySelector('meta[name="theme-color"]').content = isDark ? '#101827' : '#101b34';
+  document.querySelector('meta[name="theme-color"]').content = isDark ? '#493035' : '#f7e5e8';
 
   if (persist) {
     try {
