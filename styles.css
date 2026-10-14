@@ -403,3 +403,15 @@ body[data-theme="dark"] .founder-card { background: transparent; }
   .trust-chips span { font-size: 9px; }
   .contact { padding-bottom: 82px; }
 }
+
+/* Official screenshot logos, with their white screenshot canvas removed */
+.brand-mark-img { width: 156px; height: 46px; object-fit: contain; mix-blend-mode: multiply; }
+.footer-brand .brand-mark-img { width: 150px; height: 42px; filter: none; mix-blend-mode: normal; }
+.hero-company-mark { width: 256px; height: 270px; margin: 6px auto 0; object-fit: contain; }
+body[data-theme="dark"] .site-header .brand-mark-img { filter: none; }
+body[data-theme="dark"] .hero-company-mark { filter: none; }
+@media (max-width: 650px) {
+  .brand-mark-img { width: 138px; height: 42px; }
+  .footer-brand .brand-mark-img { width: 140px; height: 40px; }
+  .hero-company-mark { width: 215px; height: 228px; }
+}
