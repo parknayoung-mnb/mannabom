@@ -630,3 +630,30 @@ body[data-theme="dark"] .hero-company-name { color: #fff0e9; }
   .founder-card::after { padding: 58px 16px 17px; font-size: 7px; }
   .founder-photo { width: 100%; height: 100%; }
 }
+
+/* Match the supplied outline logo and keep supporting copy easy to read. */
+.hero-company-mark { width: 248px; height: 260px; margin: 0 auto; mix-blend-mode: multiply; filter: none; }
+.brand-mark-img { width: 164px; height: 48px; mix-blend-mode: multiply; }
+.hero-art-index, .hero-art-sidecopy { color: #684b45; font-size: 11px; letter-spacing: .1em; }
+.logo-kicker { color: #63433e; font-size: 12px; letter-spacing: .12em; }
+.logo-caption { color: #5e4540; font-size: 14px; }
+.hero-copy, .about-description, .how-intro, .step p, .service-text p, .trust-copy p, .contact-copy { color: #5d4a44; font-size: 15px; }
+.hero .eyebrow, .section-label { color: #674b46; }
+.hero-facts small, .promise-row article p, .step-foot, .privacy-note, .service-price span, .price-note, .founder-caption { color: #66534e; }
+.step-foot, .service-number, .service-price span, .price-note { font-size: 12px; }
+.promise-row article p, .founder-caption { font-size: 13px; }
+.trust-chips span { color: #684b45; font-size: 12px; }
+.section-label, .hero-facts small { font-size: 12px; }
+.founder-card { background: radial-gradient(ellipse at 50% 35%, #fff8f4, #f4e4df 76%); }
+.founder-photo { background: transparent; }
+.founder-photo img { object-fit: contain; object-position: center bottom; }
+body[data-theme="dark"] .hero-company-mark { mix-blend-mode: multiply; filter: brightness(1.7); }
+body[data-theme="dark"] .site-header .brand-mark-img { filter: brightness(1.5); }
+
+@media (max-width: 650px) {
+  .brand-mark-img { width: 142px; height: 42px; }
+  .hero-company-mark { width: 198px; height: 210px; }
+  .hero-copy, .about-description, .how-intro, .step p, .service-text p, .trust-copy p, .contact-copy { font-size: 14px; }
+  .founder-caption, .promise-row article p { font-size: 13px; }
+  .hero-facts small { font-size: 11px; }
+}
