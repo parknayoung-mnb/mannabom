@@ -657,3 +657,14 @@ body[data-theme="dark"] .site-header .brand-mark-img { filter: brightness(1.5); 
   .founder-caption, .promise-row article p { font-size: 13px; }
   .hero-facts small { font-size: 11px; }
 }
+
+/* The first-screen right side is the supplied logo alone, on a real transparent canvas. */
+.hero-art { display: grid; width: min(100%, 520px); height: 500px; place-items: center; overflow: visible; background: none; }
+.hero-art::before, .hero-art::after, .hero-art .logo-orbit, .hero-art .logo-kicker, .hero-art .logo-caption, .hero-art .logo-sparkle, .hero-art .hero-art-index, .hero-art .hero-art-sidecopy { display: none; }
+.hero-company-mark { display: block; width: min(100%, 390px); height: auto; max-height: 420px; margin: 0; object-fit: contain; filter: none; mix-blend-mode: normal; }
+.brand-mark-img { mix-blend-mode: normal; }
+body[data-theme="dark"] .hero-company-mark, body[data-theme="dark"] .site-header .brand-mark-img { filter: none; mix-blend-mode: normal; }
+@media (max-width: 650px) {
+  .hero-art { height: 310px; margin-top: 12px; }
+  .hero-company-mark { width: min(76vw, 270px); max-height: 295px; }
+}
