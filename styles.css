@@ -546,6 +546,7 @@ body[data-theme="dark"] .hero-company-mark { filter: none; }
   width: 100%;
   min-height: 0;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   padding: 0;
   border: 0;
@@ -556,14 +557,14 @@ body[data-theme="dark"] .hero-company-mark { filter: none; }
 }
 .logo-kicker { position: absolute; top: 8%; color: #76524d; font-size: 10px; letter-spacing: .24em; }
 .hero-company-mark {
-  width: min(345px, 78%);
-  height: auto;
-  max-height: 350px;
-  margin: 0;
+  width: 218px;
+  height: 218px;
+  max-height: none;
+  margin: 0 auto 7px;
   object-fit: contain;
-  mix-blend-mode: multiply;
   filter: drop-shadow(0 18px 26px rgba(112,72,62,.12));
 }
+.hero-company-name { position: relative; z-index: 1; color: #70483e; font-family: "Noto Sans KR", sans-serif; font-size: 48px; font-weight: 800; letter-spacing: -.1em; line-height: 1.2; }
 .logo-caption { position: absolute; bottom: 12%; margin: 0; color: #70483e; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
 .logo-sparkle { top: 17%; right: 9%; color: #b26772; font-size: 29px; }
 .hero-art-index, .hero-art-sidecopy { position: absolute; color: #8a6a64; font-size: 9px; font-weight: 700; letter-spacing: .18em; }
@@ -607,7 +608,8 @@ body[data-theme="dark"] .hero-company-mark { filter: none; }
 body[data-theme="dark"] .hero-art::before { color: rgba(255,255,255,.08); }
 body[data-theme="dark"] .hero-art::after { border-color: rgba(255,244,238,.2); }
 body[data-theme="dark"] .logo-kicker, body[data-theme="dark"] .logo-caption, body[data-theme="dark"] .hero-art-index, body[data-theme="dark"] .hero-art-sidecopy { color: #ead0c9; }
-body[data-theme="dark"] .hero-company-mark { filter: brightness(.88) drop-shadow(0 18px 26px rgba(0,0,0,.2)); }
+body[data-theme="dark"] .hero-company-mark { filter: brightness(0) invert(1) drop-shadow(0 18px 26px rgba(0,0,0,.2)); }
+body[data-theme="dark"] .hero-company-name { color: #fff0e9; }
 @media (max-width: 950px) {
   .hero-art { height: 430px; }
   .founder-card { height: 440px; }
@@ -617,7 +619,8 @@ body[data-theme="dark"] .hero-company-mark { filter: brightness(.88) drop-shadow
   .hero-art::before { font-size: 280px; }
   .hero-art::after { width: 72%; }
   .logo-kicker { top: 5%; font-size: 8px; }
-  .hero-company-mark { width: min(250px, 73%); max-height: 235px; }
+  .hero-company-mark { width: 160px; height: 160px; }
+  .hero-company-name { font-size: 38px; }
   .logo-caption { bottom: 7%; font-size: 11px; }
   .logo-sparkle { top: 11%; right: 8%; font-size: 22px; }
   .hero-art-index { bottom: 0; font-size: 7px; }
