@@ -143,3 +143,333 @@
   </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만나봄(MANNABOM) - 프리미엄 1:1 블라인드 데이트</title>
+    <style>
+        :root {
+            --primary: #ff3b5c;
+            --primary-dark: #e02e4b;
+            --bg-color: #faf9f6;
+            --card-bg: #ffffff;
+            --text-main: #222222;
+            --text-sub: #666666;
+            --border-color: #eaeaea;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0 20px 0;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .hero:hover {
+            transform: translateY(-3px);
+        }
+
+        .ceo-badge {
+            display: inline-block;
+            background: #fff0f2;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 26px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* CTA 버튼 (모바일 터치 최적화) */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 18px 0;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 59, 92, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            box-shadow: 0 6px 16px rgba(255, 59, 92, 0.4);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* 안심 뱃지 섹션 */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .badge-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .badge-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .badge-card .icon {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .badge-card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .badge-card p {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        /* 4단계 프로세스 섹션 */
+        .process-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+
+        .process-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            background: #fafafa;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .process-step:hover {
+            background: #fff5f7;
+            transform: translateX(4px);
+        }
+
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 14px;
+        }
+
+        .step-content h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .step-content p {
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0 40px 0;
+            font-size: 12px;
+            color: var(--text-sub);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+            }
+            .hero {
+                padding: 50px 40px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 헤더 로고 -->
+        <header>
+            <div class="logo">MANNABOM <span>만나봄</span></div>
+        </header>
+
+        <!-- 히어로 섹션 -->
+        <section class="hero">
+            <div class="ceo-badge">제약회사 QA 출신 대표 박나영 직접 검증</div>
+            <h1>알바 없는 진짜 인연,<br><span>1:1 프리미엄 블라인드 데이트</span></h1>
+            <p>공장형 매칭 앱에 지치셨나요?<br>철저한 본인 인증과 꼼꼼한 수동 검증으로 진정성 있는 인연을 이어드립니다.</p>
+            <a href="#apply" class="cta-button">12월 30커플 이벤트 사전 신청하기</a>
+        </section>
+
+        <!-- 안심 뱃지 영역 -->
+        <section class="trust-badges">
+            <div class="badge-card">
+                <div class="icon">🔒</div>
+                <h3>철저한 프라이버시</h3>
+                <p>익명 보장 및 유출 원천 차단</p>
+            </div>
+            <div class="badge-card">
+                <div class="icon">🗑️</div>
+                <h3>7일 후 자동 파기</h3>
+                <p>페이스톡 인증 영상 안전 관리</p>
+            </div>
+        </section>
+
+        <!-- 4단계 프로세스 인포그래픽 -->
+        <section class="process-section">
+            <h2 class="section-title">만나봄 안심 매칭 프로세스</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>10분 심층 설문 작성</h4>
+                        <p>가까운 사진, 먼 사진 2장과 함께 가치관 및 이상형 설문을 제출합니다.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>15분 페이스톡 본인 인증</h4>
+                        <p>대표가 직접 실물을 확인하고 사진 보정이나 도용을 철저히 검증합니다.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>1:1 수동 맞춤 매칭</h4>
+                        <p>기계적 알고리즘이 아닌, 결이 맞는 인연을 대표가 직접 고민하여 연결합니다.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>안전한 만남 진행</h4>
+                        <p>매칭 성사 후 투명하고 안전하게 프라이빗 데이트가 진행됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer>
+            <p>&copy; 2026 MANNABOM. All rights reserved.</p>
+            <p>부산광역시 사하구 | 문의: mannabom_@naver.com</p>
+        </footer>
+    </div>
+
+</body>
+</html>
